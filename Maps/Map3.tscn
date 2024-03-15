@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dothcfopq8pgb"]
+[gd_scene load_steps=7 format=3 uid="uid://dothcfopq8pgb"]
 
-[ext_resource type="Script" path="res://Maps/TestMouse.gd" id="1_qsp2r"]
+[ext_resource type="Script" path="res://Global/TestMouse.gd" id="1_qsp2r"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_de5bm"]
 [ext_resource type="PackedScene" uid="uid://c7yy76ehjeoin" path="res://GameObjects/Ball/Ball.tscn" id="3_d2wb4"]
 [ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Sounds/putt.wav" id="4_4li4c"]
+[ext_resource type="Script" path="res://Maps/UI.gd" id="5_pw5u4"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
@@ -35,3 +36,29 @@ position_smoothing_speed = 0.5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_4li4c")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_pw5u4")
+
+[node name="Overlay" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayerScore" type="Label" parent="CanvasLayer/Overlay"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 87.0
+offset_bottom = 17.0
+grow_vertical = 2
+
+[node name="Par" type="Label" parent="CanvasLayer/Overlay"]
+layout_mode = 0
+offset_left = 750.0
+offset_right = 794.0
+offset_bottom = 23.0
+text = "Par: 4"

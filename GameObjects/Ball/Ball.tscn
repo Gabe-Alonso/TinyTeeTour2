@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7yy76ehjeoin"]
+[gd_scene load_steps=6 format=3 uid="uid://c7yy76ehjeoin"]
 
 [ext_resource type="Texture2D" uid="uid://swf01hp1gqfu" path="res://GameObjects/Ball/ball.png" id="1_6lie4"]
 [ext_resource type="Script" path="res://GameObjects/Ball/Ball.gd" id="1_7gh3w"]
+[ext_resource type="Script" path="res://GameObjects/Ball/Trail2D.gd" id="3_m5byu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fdt48"]
 radius = 2.0
+
+[sub_resource type="Curve" id="Curve_ng3rp"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Ball" type="RigidBody2D"]
 texture_filter = 1
@@ -18,5 +23,10 @@ texture = ExtResource("1_6lie4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fdt48")
+
+[node name="Trail2D" type="Line2D" parent="."]
+show_behind_parent = true
+width_curve = SubResource("Curve_ng3rp")
+script = ExtResource("3_m5byu")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

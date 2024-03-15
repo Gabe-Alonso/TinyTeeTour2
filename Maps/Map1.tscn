@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Maps/TestMouse.gd" id="1_xbxj5"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_0y6xb"]
 [ext_resource type="PackedScene" uid="uid://c7yy76ehjeoin" path="res://GameObjects/Ball/Ball.tscn" id="3_000kk"]
-[ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Maps/putt.wav" id="4_q6ecq"]
+[ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Sounds/putt.wav" id="4_q6ecq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0

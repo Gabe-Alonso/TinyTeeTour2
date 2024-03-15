@@ -3,6 +3,7 @@ extends Node2D
 var mouse_position = null
 var is_mouse_down := false
 @onready var ball = $Ball
+@onready var put_sound = $AudioStreamPlayer2D
 var meter_buff = 4
 var meter_counter = 1
 var max_color = Color.WHITE
@@ -76,6 +77,7 @@ func _mouse_released():
 		var forceX = -(end_point.x - ball.position.x) * 5
 		var forceY = -(end_point.y - ball.position.y) * 5
 		ball.apply_impulse(Vector2(forceX, forceY))
-		ball.set_angular_velocity(0)
+		put_sound.play()
+
 			
 

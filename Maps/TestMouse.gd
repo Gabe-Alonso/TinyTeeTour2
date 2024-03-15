@@ -29,7 +29,7 @@ func _process(delta):
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT:
+		if event.button_index == MOUSE_BUTTON_LEFT && ball.get_linear_velocity().length() < 5:
 			if event.is_pressed():
 				is_mouse_down = true
 			else:
@@ -46,7 +46,9 @@ func _draw():
 		var end_point = mouse_position
 		var dist = ball.position.distance_to(end_point)
 		var color;
-		
+		if dist > 100:
+			var direction = (end_point - ball.position).normalized()
+			end_point = ball.position + direction * 100
 		if dist < 25:
 			color = Color.YELLOW
 		elif dist < 50:
@@ -58,7 +60,7 @@ func _draw():
 		else:
 			color = max_color
 		
-		draw_line(ball.position, mouse_position, color, 6)
+		draw_line(ball.position, end_point, color, 6)
 		
 	
 				
@@ -74,5 +76,6 @@ func _mouse_released():
 		var forceX = -(end_point.x - ball.position.x) * 5
 		var forceY = -(end_point.y - ball.position.y) * 5
 		ball.apply_impulse(Vector2(forceX, forceY))
+		ball.set_angular_velocity(0)
 			
 

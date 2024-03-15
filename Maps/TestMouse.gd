@@ -78,6 +78,7 @@ func _mouse_released():
 		var forceY = -(end_point.y - ball.position.y) * 5
 		ball.apply_impulse(Vector2(forceX, forceY))
 		put_sound.play()
+		$Ball/GPUParticles2D.emitting = true
 
 			
 

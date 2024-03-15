@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7yy76ehjeoin"]
+[gd_scene load_steps=9 format=3 uid="uid://c7yy76ehjeoin"]
 
 [ext_resource type="Texture2D" uid="uid://swf01hp1gqfu" path="res://GameObjects/Ball/ball.png" id="1_6lie4"]
 [ext_resource type="Script" path="res://GameObjects/Ball/Ball.gd" id="1_7gh3w"]
@@ -10,6 +10,25 @@ radius = 2.0
 [sub_resource type="Curve" id="Curve_ng3rp"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Curve" id="Curve_8vtmh"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.426056, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bcoda"]
+curve = SubResource("Curve_8vtmh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y8vjx"]
+lifetime_randomness = 0.08
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 54.85
+radial_velocity_min = 89.74
+radial_velocity_max = 217.95
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_bcoda")
 
 [node name="Ball" type="RigidBody2D"]
 texture_filter = 1
@@ -28,5 +47,14 @@ shape = SubResource("CircleShape2D_fdt48")
 show_behind_parent = true
 width_curve = SubResource("Curve_ng3rp")
 script = ExtResource("3_m5byu")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_y8vjx")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.06
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

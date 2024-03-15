@@ -23,6 +23,8 @@ BgMusic="*res://Music/BGMusic.tscn"
 [display]
 
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://putter.png"
+mouse_cursor/custom_image_hotspot=Vector2(16, 32)
 
 [editor]
 

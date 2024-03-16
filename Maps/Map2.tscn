@@ -9,7 +9,7 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
 
-[node name="Map0" type="Node2D"]
+[node name="Map1" type="Node2D"]
 position = Vector2(271, 327)
 script = ExtResource("1_mkkm3")
 

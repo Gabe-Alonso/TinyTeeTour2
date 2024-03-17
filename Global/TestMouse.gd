@@ -30,7 +30,7 @@ func _process(delta):
 		_draw()
 	meter_counter = meter_counter + 1
 
-
+	
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -80,7 +80,7 @@ func _mouse_released():
 			end_point = ball.position + direction * 100
 		var forceX = -(end_point.x - ball.position.x) * 5
 		var forceY = -(end_point.y - ball.position.y) * 5
-		ball.apply_impulse(Vector2(forceX, forceY))
+		ball.move(forceX, forceY)
 		put_sound.play()
 		shots_taken += 1
 		UI.update_shot_tracker(shots_taken)

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7yy76ehjeoin" path="res://GameObjects/Ball/Ball.tscn" id="2_crm6b"]
 [ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Sounds/putt.wav" id="4_ogtte"]
 [ext_resource type="Script" path="res://Maps/UI.gd" id="5_n0mo2"]
-[ext_resource type="TileSet" uid="uid://cvjtvnl0mc40y" path="res://Terrain/WaterTileSet.tres" id="6_34o06"]
+[ext_resource type="TileSet" uid="uid://dwjtrggymojn2" path="res://Terrain/WaterTileSet.tres" id="6_34o06"]
 [ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="6_fwh6v"]
 [ext_resource type="Texture2D" uid="uid://dhyxcpmvqaskx" path="res://reset.png" id="7_s6kyp"]
 

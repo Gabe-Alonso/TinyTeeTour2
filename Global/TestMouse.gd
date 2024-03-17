@@ -97,6 +97,7 @@ func _mouse_released():
 		ball.move(forceX, forceY)
 		put_sound.play()
 		shots_taken += 1
+		GlobalMapTracker.shots_taken += 1
 		UI.update_shot_tracker(shots_taken)
 		$Ball/BallHit.emitting = true
 

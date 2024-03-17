@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cvjtvnl0mc40y"]
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dwjtrggymojn2"]
 
 [ext_resource type="Texture2D" uid="uid://14x7clha3d3v" path="res://Water.png" id="1_364pu"]
 
@@ -10,6 +10,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/animation_frame_0/duration = 1.0
 0:0/animation_frame_1/duration = 1.0
 0:0/0 = 0
+0:1/0 = 0
 
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_as5qc")

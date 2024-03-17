@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7yy76ehjeoin" path="res://GameObjects/Ball/Ball.tscn" id="3_x54ff"]
 [ext_resource type="Script" path="res://Maps/UI.gd" id="4_n1atp"]
 [ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="5_iytjl"]
-[ext_resource type="TileSet" uid="uid://cvjtvnl0mc40y" path="res://Terrain/WaterTileSet.tres" id="5_o3u7y"]
+[ext_resource type="TileSet" uid="uid://dwjtrggymojn2" path="res://Terrain/WaterTileSet.tres" id="5_o3u7y"]
 [ext_resource type="Texture2D" uid="uid://dhyxcpmvqaskx" path="res://reset.png" id="6_tb65u"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]

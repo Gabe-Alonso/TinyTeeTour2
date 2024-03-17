@@ -52,6 +52,12 @@ func _input(event):
 		mouse_position = null
 	queue_redraw()
 
+func reset_scene():
+	print_debug("reset toggled")
+	var current_scene = get_tree().current_scene
+	get_tree().reload_current_scene()
+
+
 func _draw():
 	if mouse_position != null:
 		var end_point = mouse_position
@@ -90,7 +96,7 @@ func _mouse_released():
 		put_sound.play()
 		shots_taken += 1
 		UI.update_shot_tracker(shots_taken)
-		$Ball/GPUParticles2D.emitting = true
+		$Ball/BallHit.emitting = true
 
 			
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dothcfopq8pgb"]
+[gd_scene load_steps=9 format=3 uid="uid://dothcfopq8pgb"]
 
 [ext_resource type="Script" path="res://Global/TestMouse.gd" id="1_qsp2r"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_de5bm"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Sounds/putt.wav" id="4_4li4c"]
 [ext_resource type="Script" path="res://Maps/UI.gd" id="5_pw5u4"]
 [ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="6_kww7y"]
+[ext_resource type="Texture2D" uid="uid://dhyxcpmvqaskx" path="res://reset.png" id="7_qvqki"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
@@ -71,7 +72,7 @@ toggle_mode = true
 button_mask = 2
 icon = ExtResource("6_kww7y")
 
-[node name="Button2" type="Button" parent="CanvasLayer/Overlay"]
+[node name="CameraButton" type="Button" parent="CanvasLayer/Overlay"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 503.0
@@ -82,11 +83,22 @@ mouse_default_cursor_shape = 2
 toggle_mode = true
 icon = ExtResource("6_kww7y")
 
+[node name="ResetButton" type="Button" parent="CanvasLayer/Overlay"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 450.0
+offset_right = 998.0
+offset_bottom = 1438.0
+scale = Vector2(0.0506037, 0.0506225)
+mouse_default_cursor_shape = 2
+icon = ExtResource("7_qvqki")
+
 [node name="LevelCamera" type="Camera2D" parent="."]
 position = Vector2(-1, -270)
 enabled = false
 zoom = Vector2(0.705, 0.705)
 
-[connection signal="mouse_entered" from="CanvasLayer/Overlay/Button2" to="." method="disable_putts"]
-[connection signal="mouse_exited" from="CanvasLayer/Overlay/Button2" to="." method="disable_putts"]
-[connection signal="pressed" from="CanvasLayer/Overlay/Button2" to="." method="_toggle_zoom"]
+[connection signal="mouse_entered" from="CanvasLayer/Overlay/CameraButton" to="." method="disable_putts"]
+[connection signal="mouse_exited" from="CanvasLayer/Overlay/CameraButton" to="." method="disable_putts"]
+[connection signal="pressed" from="CanvasLayer/Overlay/CameraButton" to="." method="_toggle_zoom"]
+[connection signal="pressed" from="CanvasLayer/Overlay/ResetButton" to="." method="reset_scene"]

@@ -10,7 +10,7 @@ var meter_counter = 1
 var max_color = Color.WHITE
 var shots_taken := 0
 var level = 1
-
+var max_distance = 150
 
 
 # Called when the node enters the scene tree for the first time.
@@ -51,9 +51,9 @@ func _draw():
 		var end_point = mouse_position
 		var dist = ball.position.distance_to(end_point)
 		var color;
-		if dist > 100:
+		if dist > max_distance:
 			var direction = (end_point - ball.position).normalized()
-			end_point = ball.position + direction * 100
+			end_point = ball.position + direction * max_distance
 		if dist < 25:
 			color = Color.YELLOW
 		elif dist < 50:
@@ -75,9 +75,9 @@ func _mouse_released():
 	if mouse_position != null:
 		var end_point = mouse_position
 		var distance = ball.position.distance_to(end_point)
-		if distance > 100:
+		if distance > 200:
 			var direction = (end_point - ball.position).normalized()
-			end_point = ball.position + direction * 100
+			end_point = ball.position + direction * 200
 		var forceX = -(end_point.x - ball.position.x) * 5
 		var forceY = -(end_point.y - ball.position.y) * 5
 		ball.apply_impulse(Vector2(forceX, forceY))

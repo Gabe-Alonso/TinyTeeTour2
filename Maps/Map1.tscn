@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuk5hfqfa3xub"]
+[gd_scene load_steps=8 format=3 uid="uid://cuk5hfqfa3xub"]
 
 [ext_resource type="Script" path="res://Global/TestMouse.gd" id="1_xbxj5"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_0y6xb"]
 [ext_resource type="PackedScene" uid="uid://c7yy76ehjeoin" path="res://GameObjects/Ball/Ball.tscn" id="3_000kk"]
 [ext_resource type="AudioStream" uid="uid://caiqpi4603yhx" path="res://Sounds/putt.wav" id="4_q6ecq"]
 [ext_resource type="Script" path="res://Maps/UI.gd" id="5_yoa23"]
+[ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="6_dmr17"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
@@ -28,11 +29,6 @@ physics_material_override = SubResource("PhysicsMaterial_utmr2")
 max_contacts_reported = 1
 contact_monitor = true
 linear_damp = 1.0
-angular_damp = 100.0
-
-[node name="Camera2D" type="Camera2D" parent="Ball"]
-position_smoothing_enabled = true
-position_smoothing_speed = 0.5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_q6ecq")
@@ -63,3 +59,23 @@ offset_top = 6.0
 offset_right = 827.0
 offset_bottom = 29.0
 text = "Par: 6"
+
+[node name="Button" type="Button" parent="CanvasLayer/Overlay"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 503.0
+offset_right = 118.0
+offset_bottom = 614.0
+scale = Vector2(0.503299, 0.515239)
+mouse_default_cursor_shape = 2
+toggle_mode = true
+icon = ExtResource("6_dmr17")
+
+[node name="LevelCamera" type="Camera2D" parent="."]
+position = Vector2(16, 27)
+enabled = false
+zoom = Vector2(0.7, 0.7)
+
+[connection signal="mouse_entered" from="CanvasLayer/Overlay/Button" to="." method="disable_putts"]
+[connection signal="mouse_exited" from="CanvasLayer/Overlay/Button" to="." method="disable_putts"]
+[connection signal="pressed" from="CanvasLayer/Overlay/Button" to="." method="_toggle_zoom"]

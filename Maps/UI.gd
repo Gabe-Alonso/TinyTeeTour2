@@ -15,3 +15,9 @@ func update_shot_tracker(shots_taken: int):
 	
 func update_par_tracker(par: int):
 	$Overlay/Par.text = "Par: %d" % par
+
+	
+func _toggle_zoom():
+	print_debug("Camera toggled")
+	$LevelCamera.enabled = not $LevelCamera.enabled
+	$Ball/BallCamera.enabled = not $Ball/BallCamera.enabled

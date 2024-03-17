@@ -31,8 +31,12 @@ func _process(delta):
 func win():
 	GlobalMapTracker.next_map()
 	
+func _on_body_entered():
+	$BallHit.emitting = true
 
 func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	$wallSound.play()
+	$WallHit.emitting = true
 	if body is TileMap:
 		var tile_coords = body.get_coords_for_body_rid(body_rid)
 		
@@ -46,6 +50,7 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 				continue
 			else:
 				if cur_layer == hole_layer:
+					
 					win()
 				elif cur_layer == liquid_layer:
 					stop()

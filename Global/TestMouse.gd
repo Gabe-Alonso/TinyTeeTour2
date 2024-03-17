@@ -30,6 +30,7 @@ func _process(delta):
 		_draw()
 	meter_counter = meter_counter + 1
 
+
 func _toggle_zoom():
 	print_debug("Camera toggled")
 	$LevelCamera.enabled = not $LevelCamera.enabled
@@ -37,6 +38,7 @@ func _toggle_zoom():
 
 func disable_putts():
 	putts_disabled = not putts_disabled
+
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -92,7 +94,7 @@ func _mouse_released():
 			end_point = ball.position + direction * 200
 		var forceX = -(end_point.x - ball.position.x) * 5
 		var forceY = -(end_point.y - ball.position.y) * 5
-		ball.apply_impulse(Vector2(forceX, forceY))
+		ball.move(forceX, forceY)
 		put_sound.play()
 		shots_taken += 1
 		UI.update_shot_tracker(shots_taken)

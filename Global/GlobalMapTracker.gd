@@ -18,7 +18,5 @@ func _process(delta):
 	pass
 
 func next_map():
-	print_debug(cur_map)
 	cur_map = cur_map + 1
-	print_debug("Yippee")
 	get_tree().change_scene_to_file("res://Maps/Map%d.tscn"%cur_map)

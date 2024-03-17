@@ -11,7 +11,7 @@ var max_color = Color.WHITE
 var shots_taken := 0
 var level = 1
 var max_distance = 150
-
+var putts_disabled := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,11 +30,17 @@ func _process(delta):
 		_draw()
 	meter_counter = meter_counter + 1
 
+func _toggle_zoom():
+	print_debug("Camera toggled")
+	$LevelCamera.enabled = not $LevelCamera.enabled
+	$Ball/BallCamera.enabled = not $Ball/BallCamera.enabled
 
+func disable_putts():
+	putts_disabled = not putts_disabled
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT && ball.get_linear_velocity().length() < 5:
+		if event.button_index == MOUSE_BUTTON_LEFT && ball.get_linear_velocity().length() < 5 && !putts_disabled:
 			if event.is_pressed():
 				is_mouse_down = true
 			else:

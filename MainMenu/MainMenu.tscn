@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp3oo3lvsjj1d"]
+[gd_scene load_steps=4 format=3 uid="uid://cp3oo3lvsjj1d"]
 
 [ext_resource type="Script" path="res://MainMenu/Play_Button.gd" id="1_4tgxl"]
 [ext_resource type="Script" path="res://MainMenu/Credits_Button.gd" id="2_43vfm"]
+[ext_resource type="Texture2D" uid="uid://csmwbt4v8fagb" path="res://main_menu.png" id="3_g5rnt"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,6 +26,11 @@ offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Label" type="Label" parent="Nav"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "Tiny Tee Tour"
+
 [node name="Play" type="Button" parent="Nav"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
@@ -36,6 +42,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Credits"
 script = ExtResource("2_43vfm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(579, 374)
+scale = Vector2(2.27353, 2.27353)
+texture = ExtResource("3_g5rnt")
 
 [connection signal="pressed" from="Nav/Play" to="Nav/Play" method="_on_pressed"]
 [connection signal="pressed" from="Nav/Credits" to="Nav/Credits" method="_on_pressed"]

@@ -25,7 +25,7 @@ layer_0/tile_data = PackedInt32Array(-65538, 65536, 1, -2, 65536, 1, -65537, 655
 layer_1/name = "Hole"
 layer_1/tile_data = PackedInt32Array(786426, 0, 8)
 layer_2/name = "Liquid"
-layer_2/tile_data = PackedInt32Array()
+layer_2/tile_data = PackedInt32Array(-196608, 0, 23, -131074, 131072, 23, 458752, 0, 21, 524281, 131072, 21, -458759, 131072, 23, -524283, 0, 23, 720889, 131072, 23, 851961, 131072, 21, 786437, 0, 21)
 
 [node name="Ball" parent="." instance=ExtResource("3_000kk")]
 position = Vector2(-16, -64)

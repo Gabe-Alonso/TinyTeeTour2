@@ -27,6 +27,7 @@ func update_score():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	for i in range(11):
 		par_total += par[i]
 
@@ -37,6 +38,7 @@ func _process(delta):
 	pass
 
 func next_map():
+	
 	update_score()
 	print_debug(scores)
 	cur_map = cur_map + 1
@@ -44,3 +46,4 @@ func next_map():
 		get_tree().change_scene_to_file("res://MainMenu/ScoreScreen.tscn")
 	else:
 		get_tree().change_scene_to_file("res://Maps/Map%d.tscn"%cur_map)
+

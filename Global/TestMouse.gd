@@ -54,6 +54,9 @@ func _input(event):
 		mouse_position = null
 	queue_redraw()
 
+
+	
+
 func reset_scene():
 	print_debug("reset toggled")
 	var current_scene = get_tree().current_scene

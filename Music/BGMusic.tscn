@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn1dfe2xriwq0"]
+[gd_scene load_steps=3 format=3 uid="uid://bn1dfe2xriwq0"]
 
 [ext_resource type="AudioStream" uid="uid://1atu8hbtpwql" path="res://Sounds/BackGroundMusic.mp3" id="1_c5byk"]
+[ext_resource type="AudioStream" uid="uid://cml7ho51lwfvf" path="res://Sounds/hole.wav" id="2_klwtj"]
 
 [node name="BgMusic" type="Node2D"]
 
@@ -8,3 +9,6 @@
 stream = ExtResource("1_c5byk")
 volume_db = -16.326
 autoplay = true
+
+[node name="HoleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_klwtj")

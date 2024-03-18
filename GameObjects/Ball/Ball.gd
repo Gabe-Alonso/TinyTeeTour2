@@ -6,6 +6,7 @@ var last_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$HoleSound.play()
 	last_pos = global_transform.origin
 	print_debug(position)
 	

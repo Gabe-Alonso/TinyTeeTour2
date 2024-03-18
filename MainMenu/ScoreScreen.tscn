@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cttm14detyota"]
+[gd_scene load_steps=7 format=3 uid="uid://cttm14detyota"]
 
 [ext_resource type="Script" path="res://MainMenu/Menu_Button.gd" id="1_qkcqp"]
+[ext_resource type="Script" path="res://MainMenu/ScoreScreen.gd" id="1_tiqn7"]
 [ext_resource type="Texture2D" uid="uid://dxayij864crvv" path="res://Background.png" id="2_2og7n"]
 [ext_resource type="Script" path="res://MainMenu/Scoreboard.gd" id="2_2rus8"]
 [ext_resource type="Texture2D" uid="uid://nfgjk0cn0pr6" path="res://score_screen.png" id="4_7u831"]
+[ext_resource type="AudioStream" uid="uid://2hjj4587jlam" path="res://Sounds/VictorySound.wav" id="5_crwpn"]
 
 [node name="ScoreScreen" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tiqn7")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -239,5 +242,8 @@ texture = ExtResource("4_7u831")
 position = Vector2(298, 408)
 scale = Vector2(1.08339, 0.313519)
 color = Color(0.462745, 0, 0.168627, 1)
+
+[node name="VictorySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_crwpn")
 
 [connection signal="pressed" from="BoxContainer/MenuButton" to="BoxContainer/MenuButton" method="_on_pressed"]

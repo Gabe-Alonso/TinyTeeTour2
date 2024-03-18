@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cttm14detyota"]
+[gd_scene load_steps=5 format=3 uid="uid://cttm14detyota"]
 
 [ext_resource type="Script" path="res://MainMenu/Menu_Button.gd" id="1_qkcqp"]
+[ext_resource type="Texture2D" uid="uid://dxayij864crvv" path="res://Background.png" id="2_2og7n"]
 [ext_resource type="Script" path="res://MainMenu/Scoreboard.gd" id="2_2rus8"]
+[ext_resource type="Texture2D" uid="uid://nfgjk0cn0pr6" path="res://score_screen.png" id="4_7u831"]
 
 [node name="ScoreScreen" type="Control"]
 layout_mode = 3
@@ -25,6 +27,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Back"
 script = ExtResource("1_qkcqp")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(523, 280)
+scale = Vector2(8.72261, 4.83769)
+texture = ExtResource("2_2og7n")
 
 [node name="Scoreboard" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -221,5 +228,16 @@ text = "1"
 [node name="ScoreTotal" type="Label" parent="Scoreboard/Totals"]
 layout_mode = 2
 text = "1"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(575, 333.75)
+scale = Vector2(2.24219, 1.30822)
+texture = ExtResource("4_7u831")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(298, 408)
+scale = Vector2(1.08339, 0.313519)
+color = Color(0.462745, 0, 0.168627, 1)
 
 [connection signal="pressed" from="BoxContainer/MenuButton" to="BoxContainer/MenuButton" method="_on_pressed"]

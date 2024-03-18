@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://brrmdwxpmnq7x"]
+[gd_scene load_steps=10 format=3 uid="uid://cfaooi42kqht3"]
 
 [ext_resource type="Script" path="res://Global/TestMouse.gd" id="1_7wqpd"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_1c3h8"]
@@ -7,12 +7,12 @@
 [ext_resource type="Script" path="res://Maps/UI.gd" id="5_w6n5n"]
 [ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="6_6bnpg"]
 [ext_resource type="Texture2D" uid="uid://dhyxcpmvqaskx" path="res://reset.png" id="7_2noie"]
-[ext_resource type="TileSet" uid="uid://dwjtrggymojn2" path="res://Terrain/WaterTileSet.tres" id="8_is6q6"]
+[ext_resource type="TileSet" uid="uid://cvjtvnl0mc40y" path="res://Terrain/WaterTileSet.tres" id="8_is6q6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
 
-[node name="Map1" type="Node2D"]
+[node name="Map2" type="Node2D"]
 position = Vector2(271, 327)
 script = ExtResource("1_7wqpd")
 

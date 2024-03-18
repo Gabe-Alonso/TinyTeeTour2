@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ddjilj2c2thmp"]
+[gd_scene load_steps=10 format=3 uid="uid://cr1xv2q51spkx"]
 
 [ext_resource type="Script" path="res://Global/TestMouse.gd" id="1_t6l55"]
 [ext_resource type="TileSet" uid="uid://bf1ggp1mx1r3x" path="res://Terrain/TileSet1.tres" id="2_430vf"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Maps/UI.gd" id="5_vrwo6"]
 [ext_resource type="Texture2D" uid="uid://ciwq4easgbbss" path="res://camera_button.png" id="6_4ivaa"]
 [ext_resource type="Texture2D" uid="uid://dhyxcpmvqaskx" path="res://reset.png" id="7_sgjmi"]
-[ext_resource type="TileSet" uid="uid://dwjtrggymojn2" path="res://Terrain/WaterTileSet.tres" id="8_4pmaa"]
+[ext_resource type="TileSet" uid="uid://cvjtvnl0mc40y" path="res://Terrain/WaterTileSet.tres" id="8_4pmaa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_utmr2"]
 bounce = 1.0
